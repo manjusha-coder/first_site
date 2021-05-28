@@ -1,0 +1,90 @@
+body{
+    background-color: rgb(114, 92, 238);
+    margin:0px ;
+    padding: 0px;
+    animation: change 10s infinite ;
+}
+.ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background:transparent;
+    border: 3px solid #7981f1;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 130px;
+    font-family: sans-serif;
+    font-size: 12px;
+    transform: translate(-50%,-50%);
+    letter-spacing: 3px;
+    color: #fffb00;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #fffb00;
+    box-shadow: 0 0 20px rgba(0,0,0,.5); 
+}
+h4{
+    color: rgb(219, 219, 20);
+    text-shadow: 0 0 0 ;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+.ring::before{
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid #fff000;
+    border-right: yellow 3px solid;
+    border-radius: 50%;
+    animation: animatecircle 2s linear infinite;
+}
+span{
+    display: block;
+    position: absolute;
+    top:calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background:transparent;
+    transform-origin:left;
+    animation: animate 2s linear infinite;
+}
+span::before{
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff000;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #fff000; 
+}
+@keyframes animatecircle {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate {
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(405deg);
+    }
+}
+@keyframes change{
+0% {background-color: rgb(17, 196, 209);}
+25% {background-color:#d103e4;}
+50% {background-color: #4e034b;}
+75% {background-color: rgb(0, 127, 245);}
+100% {background-color:#0a0a0a;}
+}
